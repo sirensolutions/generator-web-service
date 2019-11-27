@@ -1,8 +1,8 @@
 import { InputSchema, OutputConfiguration, ServiceDefinition, SimpleMap, WebServiceError } from '@sirensolutions/web-service-interface';
 import axios from 'axios';
 
-export default class MyService extends ServiceDefinition<{ auth_token: string }> {
-  readonly name = 'service1';
+export default class <%= service %> extends ServiceDefinition<{ auth_token: string }> {
+  readonly name = '<%= service.toLowerCase() %>';
   readonly inputSchema: InputSchema = {
     text_input: { type: 'text', required: true }
   };
