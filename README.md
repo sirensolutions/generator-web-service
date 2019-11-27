@@ -16,7 +16,7 @@ yo @sirensolutions/web-service
 
 
 ## For Developers
-To use a generator that that exists as a local repository, run `yarn link` in the repository, then generate your new project the same way:
+To use a generator that exists as a local repository, run `yarn link` in the repository, then generate your new project the same way:
 
 ```bash
 yo @sirensolutions/web-service
