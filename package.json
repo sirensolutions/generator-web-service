@@ -1,14 +1,18 @@
 {
   "name": "@sirensolutions/generator-web-service",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Generator that allows users to easily create web service drivers",
   "homepage": "https://siren.io",
   "repository": "https://github.com/sirensolutions/web-service-interface.git",
   "license": "GPL-3.0-or-later",
   "author": "Dara Dermody",
-  "files": ["app"],
+  "files": [
+    "app"
+  ],
   "main": "generators/index.js",
-  "keywords": ["yeoman-generator"],
+  "keywords": [
+    "yeoman-generator"
+  ],
   "dependencies": {
     "chalk": "^2.1.0",
     "yeoman-generator": "^2.0.1"
