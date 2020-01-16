@@ -3,7 +3,6 @@
   "version": "0.0.2",
   "description": "Generator that allows users to easily create web service drivers",
   "homepage": "https://siren.io",
-  "repository": "https://github.com/sirensolutions/web-service-interface.git",
   "license": "GPL-3.0-or-later",
   "author": "Dara Dermody",
   "files": [
