@@ -1,7 +1,7 @@
 const { src, dest, series, parallel } = require('gulp');
 const { exec } = require('shelljs');
 const mkdirp = require('mkdirp');
-const rsync = require('gulp-rsync');
+const fs = require('fs-extra');
 const rimraf = require('rimraf');
 const zip = require('gulp-zip');
 const ts = require('gulp-typescript');
@@ -10,16 +10,16 @@ const cache = require('gulp-cached');
 
 const PACKAGE_NAME = require('./package.json').name;
 
-function copyFiles(destination) {
-  return function copyServerFiles() {
-    return src(['dist/**', '!dist/tsconfig.tsbuildinfo'])
-      .pipe(rsync({ root: 'dist', destination, archive: true, update: true, clean: true }));
-  };
+function copyFiles(source, destination) {
+  return function copyFiles() {
+    return fs.copy(source, destination)
+      .catch(console.error)
+  }
 }
 
 function install(location) {
   return async function install() {
-    const process = exec(`yarn --production`, { cwd: location, silent: true });
+    const process = exec(`npm install --only=production`, { cwd: location, silent: true });
     if (process.code) {
       console.log(process.stdout);
       throw new Error(process.stderr);
@@ -65,7 +65,7 @@ const build = series(
   exports.clean,
   exports.compile,
   mkdir(`build/kibana/${PACKAGE_NAME}`),
-  copyFiles(`build/kibana/${PACKAGE_NAME}`),
+  copyFiles('dist', `build/kibana/${PACKAGE_NAME}`),
   install(`build/kibana/${PACKAGE_NAME}`)
 );
 

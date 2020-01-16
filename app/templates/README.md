@@ -7,7 +7,7 @@ This web service driver consists of one service, `<%= service %>`, registered by
 
 # Installation
 To install these services into Investigate:
-1. Run `yarn package` to create a zip
+1. Run `npm run package` to create a zip
 1. Run `bin/investigate-plugin install file:////path/to/<%= group %>/target/<%= group %>.zip`
 
 This project was generated with Siren's [generator for web service drivers](https://www.npmjs.com/package/@sirensolutions/generator-web-service).

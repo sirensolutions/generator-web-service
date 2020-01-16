@@ -43,12 +43,12 @@ module.exports = class extends Generator {
 
   install() {
     this.log('\nInstalling dependencies...');
-    this.yarnInstall(undefined, undefined, { stdio: ['inherit', 'ignore', 'pipe'] });
+    this.npmInstall(undefined, undefined, { stdio: ['inherit', 'ignore', 'pipe'] });
   }
 
   end() {
     this.log(`\n\nDirectory '${this.props.group}' has been created!`);
-    this.log(`\nTo add your web service to Investigate, run ${chalk.yellow('yarn package')} and install the generated zip:`);
+    this.log(`\nTo add your web service to Investigate, run ${chalk.yellow('npm run package')} and install the generated zip:`);
     this.log(chalk.yellow(`  bin/investigate-plugin install file:///${this.destinationPath(`target/${this.props.group}.zip`)}\n`));
   }
 };
