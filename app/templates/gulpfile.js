@@ -12,8 +12,7 @@ const PACKAGE_NAME = require('./package.json').name;
 
 function copyFiles(source, destination) {
   return function copyFiles() {
-    return fs.copy(source, destination)
-      .catch(console.error)
+    return fs.copy(source, destination);
   }
 }
 
