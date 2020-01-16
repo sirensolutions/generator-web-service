@@ -1,6 +1,6 @@
 {
   "name": "@sirensolutions/generator-web-service",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Generator that allows users to easily create web service drivers",
   "homepage": "https://siren.io",
   "license": "GPL-3.0-or-later",
