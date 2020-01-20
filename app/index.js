@@ -37,6 +37,7 @@ module.exports = class extends Generator {
     this.fs.copyTpl(this.templatePath('README.md'), this.destinationPath('README.md'), this.props);
     this.fs.copyTpl(this.templatePath('src/index.ts'), this.destinationPath('src/index.ts'), this.props);
     this.fs.copyTpl(this.templatePath('src/MyService.ts'), this.destinationPath(`src/${this.props.service}.ts`), this.props);
+    this.fs.copyTpl(this.templatePath('invoke'), this.destinationPath('invoke'), this.props);
     this.fs.copy(this.templatePath('tsconfig.json'), this.destinationPath('tsconfig.json'));
     this.fs.copy(this.templatePath('gulpfile.js'), this.destinationPath('gulpfile.js'));
   }
@@ -47,8 +48,6 @@ module.exports = class extends Generator {
   }
 
   end() {
-    this.log(`\n\nDirectory '${this.props.group}' has been created!`);
-    this.log(`\nTo add your web service to Investigate, run ${chalk.yellow('npm run package')} and install the generated zip:`);
-    this.log(chalk.yellow(`  bin/investigate-plugin install file:///${this.destinationPath(`target/${this.props.group}.zip`)}\n`));
+    this.log(`\n${chalk.bgGreenBright.black(' SUCCESS ')} Directory '${chalk.green(this.props.group)}' has been created! Please read the ${chalk.green('README.md')} for the next steps.\n`);
   }
 };
