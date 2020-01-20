@@ -5,6 +5,11 @@ See [here](https://www.npmjs.com/package/@sirensolutions/web-service-interface) 
 
 This web service driver consists of one service, `<%= service %>`, registered by the [`index.ts`](src/index.ts) module. Edit the [`<%= service %>.ts`](src/<%= service %>.ts) module to specify the inputs and outputs, and to query the web API you want to get data from.
 
+You can test the service using the `invoke` script:
+```bash
+node invoke <%= service %> --input:query ireland
+```
+
 # Installation
 To install these services into Investigate:
 1. Run `npm run package` to create a zip

@@ -20,9 +20,11 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-typescript": "^5.0.1",
     "gulp-zip": "^5.0.1",
+    "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
     "rimraf": "^3.0.0",
     "shelljs": "^0.8.3",
+    "sinon": "^8.1.0",
     "typescript": "^3.7.2"
   }
 }

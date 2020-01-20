@@ -1,4 +1,5 @@
-import { Joi, registerServices } from '@sirensolutions/web-service-interface';
+import { registerServices } from '@sirensolutions/web-service-interface';
 import <%= service %> from './<%= service %>';
 
-export = registerServices('<%= group %>', [<%= service %>], { auth_token: Joi.string().required() });
+// This is the syntax for registering the '<%= service %>' service into the group '<%= group %>'
+export = registerServices('<%= group %>', [<%= service %>]);
