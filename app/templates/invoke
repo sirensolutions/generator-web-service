@@ -62,9 +62,9 @@ function help() {
 async function compileTypescript() {
   try {
     await exec('npx gulp compile');
-  } catch (e) {
-    e.message = 'Could not compile Typescript:\n\n' + e.stdout + e.stderr;
-    throw e
+  } catch (err) {
+    err.message = 'Could not compile Typescript:\n\n' + err.stdout + err.stderr;
+    throw err
   }
 }
 

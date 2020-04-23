@@ -6,8 +6,7 @@
     "strict": true,
     "lib": ["esnext"],
     "target": "esnext",
-    "noImplicitAny": false,
-    "types": ["node"]
+    "noImplicitAny": false
   },
   "include": [
     "src/**/*"
