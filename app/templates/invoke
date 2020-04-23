@@ -60,9 +60,11 @@ function help() {
 }
 
 async function compileTypescript() {
-  const { stderr } = await exec('npx gulp compile');
-  if (stderr) {
-    throw new Error(stderr);
+  try {
+    await exec('npx gulp compile');
+  } catch (err) {
+    err.message = 'Could not compile Typescript:\n\n' + err.stdout + err.stderr;
+    throw err
   }
 }
 
@@ -132,4 +134,9 @@ function warn(string) {
 }
 
 main()
-  .catch(err => error(process.argv.includes('--debug') ? `${err.stack}\n` : `Error: ${err.message}\n`));
+  .catch(err => {
+    if (err instanceof webServiceInterface.WebServiceError) {
+      err.message = `${err.message}:\n${JSON.stringify(err.data, null, 2)}`;
+    }
+    error(process.argv.includes('--debug') ? `${err.stack}\n` : `Error: ${err.message}\n`);
+  });
