@@ -136,7 +136,7 @@ function warn(string) {
 main()
   .catch(err => {
     if (err instanceof webServiceInterface.WebServiceError) {
-      err.message = `${err.message}:\n${JSON.stringify(err.data, null, 2)}`
+      err.message = `${err.message}:\n${JSON.stringify(err.data, null, 2)}`;
     }
-    error(process.argv.includes('--debug') ? `${err.stack}\n` : `Error: ${err.message}\n`)
+    error(process.argv.includes('--debug') ? `${err.stack}\n` : `Error: ${err.message}\n`);
   });
