@@ -42,9 +42,9 @@ export default class <%= service %> extends ServiceDefinition {
     // Must return objects with the same structure as in this.outputConfiguration. These are stored in Elasticsearch automatically.
     return {
       item: response.data.items.map(item => ({
-        timestampe: item.timestamp,
+        timestamp: item.timestamp,
         message: item.message,
-        number: item  .number
+        number: item.number
       }))
     };
   }
