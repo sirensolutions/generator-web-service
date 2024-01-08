@@ -11,9 +11,10 @@
   },
   "dependencies": {
     "@sirensolutions/web-service-interface": "latest",
-    "axios": "0.24.0"
+    "axios": "1.6.5"
   },
   "devDependencies": {
+    "@types/node": "^20.10.7",
     "fs-extra": "^8.1.0",
     "gulp": "^4.0.2",
     "gulp-cached": "^1.1.1",
@@ -25,6 +26,6 @@
     "rimraf": "^3.0.0",
     "shelljs": "^0.8.3",
     "sinon": "^8.1.0",
-    "typescript": "^3.7.2"
+    "typescript": "4.9.5"
   }
 }

@@ -1,11 +1,11 @@
 ## Installation
 
-Please ensure that your version of NodeJs is greater than 10:
+Please ensure that your version of NodeJs is 20 or greater:
 ```bash
-node --version // v10.14.2
+node --version // v20.10.0
 ```
 
-First, install [Yeoman](http://yeoman.io) and generator-web-service [npm](https://www.npmjs.com/).
+First, install [Yeoman](http://yeoman.io) and [generator-web-service](https://www.npmjs.com/package/@sirensolutions/generator-web-service):
 
 ```bash
 npm install -g yo @sirensolutions/generator-web-service
